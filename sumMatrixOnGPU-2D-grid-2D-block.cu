@@ -148,7 +148,12 @@ __global__ void sumMatrixOnGPU2D(float *MatA, float *MatB, float *MatC, int nx,
 {
 
 
-## //Write your code here
+
+
+//Write your code here
+
+
+
 
 
 }
