@@ -12,7 +12,7 @@
     const cudaError_t error = call;                                            \
     if (error != cudaSuccess)                                                  \
     {                                                                          \
-        fprintf(stderr, "Error: %s:%d, ", FILE, __LINE);                 \
+        fprintf(stderr, "Error: %s:%d, ", __FILE__, __LINE__);                 \
         fprintf(stderr, "code: %d, reason: %s\n", error,                       \
                 cudaGetErrorString(error));                                    \
         exit(1);                                                               \
@@ -24,8 +24,8 @@
     cublasStatus_t err;                                                        \
     if ((err = (call)) != CUBLAS_STATUS_SUCCESS)                               \
     {                                                                          \
-        fprintf(stderr, "Got CUBLAS error %d at %s:%d\n", err, FILE,       \
-                LINE);                                                     \
+        fprintf(stderr, "Got CUBLAS error %d at %s:%d\n", err, __FILE__,       \
+                __LINE__);                                                     \
         exit(1);                                                               \
     }                                                                          \
 }
@@ -35,8 +35,8 @@
     curandStatus_t err;                                                        \
     if ((err = (call)) != CURAND_STATUS_SUCCESS)                               \
     {                                                                          \
-        fprintf(stderr, "Got CURAND error %d at %s:%d\n", err, FILE,       \
-                LINE);                                                     \
+        fprintf(stderr, "Got CURAND error %d at %s:%d\n", err, __FILE__,       \
+                __LINE__);                                                     \
         exit(1);                                                               \
     }                                                                          \
 }
@@ -46,8 +46,8 @@
     cufftResult err;                                                           \
     if ( (err = (call)) != CUFFT_SUCCESS)                                      \
     {                                                                          \
-        fprintf(stderr, "Got CUFFT error %d at %s:%d\n", err, FILE,        \
-                LINE);                                                     \
+        fprintf(stderr, "Got CUFFT error %d at %s:%d\n", err, __FILE__,        \
+                __LINE__);                                                     \
         exit(1);                                                               \
     }                                                                          \
 }
@@ -57,7 +57,7 @@
     cusparseStatus_t err;                                                      \
     if ((err = (call)) != CUSPARSE_STATUS_SUCCESS)                             \
     {                                                                          \
-        fprintf(stderr, "Got error %d at %s:%d\n", err, FILE, __LINE);   \
+        fprintf(stderr, "Got error %d at %s:%d\n", err, __FILE__, __LINE__);   \
         cudaError_t cuda_err = cudaGetLastError();                             \
         if (cuda_err != cudaSuccess)                                           \
         {                                                                      \
@@ -125,7 +125,7 @@ if (match) printf("Arrays match.\n\n");
 return;
 }
 // grid 2D block 2D
-global void sumMatrixOnGPU2D(float *A, float *B, float *C, int NX, int NY)
+__global__ void sumMatrixOnGPU2D(float *A, float *B, float *C, int NX, int NY)
 {
     unsigned int ix = blockIdx.x * blockDim.x + threadIdx.x;
     unsigned int iy = blockIdx.y * blockDim.y + threadIdx.y;
@@ -201,10 +201,16 @@ cudaFree(d_MatA);
 cudaFree(d_MatB);
 cudaFree(d_MatC);
 // free host memory
-free(h_A);free(h_B);
+free(h_A);
+free(h_B);
 free(hostRef);
 free(gpuRef);
 // reset device
 cudaDeviceReset();
 return (0);
 }
+
+
+
+
+
