@@ -1,4 +1,3 @@
-![Screenshot 2024-04-02 151147](https://github.com/yuvarajmonarch/PCA-EXP-2-MATRIX-SUMMATION-USING-2D-GRIDS-AND-2D-BLOCKS-AY-23-24/assets/122221735/080f15ae-378b-4ff1-8399-f03c85071dc8)
 ![Screenshot 2024-04-02 151147](https://github.com/yuvarajmonarch/PCA-EXP-2-MATRIX-SUMMATION-USING-2D-GRIDS-AND-2D-BLOCKS-AY-23-24/assets/122221735/98520230-dc35-404b-95d2-312da145ed70)
 %%cuda
 #include <cuda_runtime.h>
