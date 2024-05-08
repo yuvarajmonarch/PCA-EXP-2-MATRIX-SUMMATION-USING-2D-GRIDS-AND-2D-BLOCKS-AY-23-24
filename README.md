@@ -1,3 +1,49 @@
+### ++# PCA-EXP-2-Matrix-Summation-using-2D-Grids-and-2D-Blocks-AY-23-24
+
+## NAME: kabilan T
+## REG.NO: 212222230059
+## EX. NO: 02
+
+<h3>AIM:</h3>
+<h3>ENTER YOUR NAME</h3>
+<h3>ENTER YOUR REGISTER NO</h3>
+<h3>EX. NO</h3>
+<h3>DATE</h3>
+<h1> <align=center> MATRIX SUMMATION WITH A 2D GRID AND 2D BLOCKS </h3>
+i.  Use the file sumMatrixOnGPU-2D-grid-2D-block.cu
+ii. Matrix summation with a 2D grid and 2D blocks. Adapt it to integer matrix addition. Find the best execution configuration. </h3>
+
+## AIM:
+To perform  matrix summation with a 2D grid and 2D blocks and adapting it to integer matrix addition.
+
+## EQUIPMENTS REQUIRED:
+Hardware – PCs with NVIDIA GPU & CUDA NVCC
+Google Colab with NVCC Compiler
+
+
+
+
+## PROCEDURE:
+
+1.	Initialize the data: Generate random data for two input arrays using the initialData function.
+2.	Perform the sum on the host: Use the sumMatrixOnHost function to calculate the sum of the two input arrays on the host (CPU) for later verification of the GPU results.
+3.	Allocate memory on the device: Allocate memory on the GPU for the two input arrays and the output array using cudaMalloc.
+4.	Transfer data from the host to the device: Copy the input arrays from the host to the device using cudaMemcpy.
+5.	Set up the execution configuration: Define the size of the grid and blocks. Each block contains multiple threads, and the grid contains multiple blocks. The total number of threads is equal to the size of the grid times the size of the block.
+6.	Perform the sum on the device: Launch the sumMatrixOnGPU2D kernel on the GPU. This kernel function calculates the sum of the two input arrays on the device (GPU).
+7.	Synchronize the device: Use cudaDeviceSynchronize to ensure that the device has finished all tasks before proceeding.
+8.	Transfer data from the device to the host: Copy the output array from the device back to the host using cudaMemcpy.
+9.	Check the results: Use the checkResult function to verify that the output array calculated on the GPU matches the output array calculated on the host.
+10.	Free the device memory: Deallocate the memory that was previously allocated on the GPU using cudaFree.
+11.	Free the host memory: Deallocate the memory that was previously allocated on the host.
+12.	Reset the device: Reset the device using cudaDeviceReset to ensure that all resources are cleaned up before the program exits.
+
+## PROGRAM:
+TYPE YOUR CODE HERE
+~~~
+!pip install git+https://github.com/andreinechaev/nvcc4jupyter.git
+%load_ext nvcc4jupyter
+
 %%cuda
 #include <cuda_runtime.h>
 #include <stdio.h>
@@ -211,9 +257,15 @@ return (0);
 }
 
 
-![Screenshot 2024-04-02 151147](https://github.com/yuvarajmonarch/PCA-EXP-2-MATRIX-SUMMATION-USING-2D-GRIDS-AND-2D-BLOCKS-AY-23-24/assets/122221735/98520230-dc35-404b-95d2-312da145ed70)
 
 
 
 
+~~~
 
+## OUTPUT:
+<img width="868" alt="Screenshot 2024-03-14 205617" src="https://github.com/kabilanthiyagarajan/PCA-EXP-2-MATRIX-SUMMATION-USING-2D-GRIDS-AND-2D-BLOCKS-AY-23-24/assets/120206067/7b49d783-66d8-43a1-9258-fbc4fcc2c3b8">
+
+
+## RESULT:
+The host took 0.833230 seconds to complete it’s computation, while the GPU outperforms the host and completes the computation in 0.049779 seconds. Therefore, float variables in the GPU will result in the best possible result. Thus, matrix summation using 2D grids and 2D blocks has been performed successfully.
