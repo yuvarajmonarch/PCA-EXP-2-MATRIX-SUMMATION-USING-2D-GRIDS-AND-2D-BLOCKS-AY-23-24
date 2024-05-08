@@ -1,9 +1,9 @@
-##PCA-EXP-2-Matrix-Summation-using-2D-Grids-and-2D-Blocks-AY-23-24
+</h3>PCA-EXP-2-Matrix-Summation-using-2D-Grids-and-2D-Blocks-AY-23-24</h3>
 
 ## NAME: YUVARAJ B
 ## REG.NO: 212222040186
 ## EX. NO: 02
-<h3>DATE</h3>
+</h3>DATE</h3>
 
 <h3>AIM:</h3>
 <h1> <align=center> MATRIX SUMMATION WITH A 2D GRID AND 2D BLOCKS </h3>
