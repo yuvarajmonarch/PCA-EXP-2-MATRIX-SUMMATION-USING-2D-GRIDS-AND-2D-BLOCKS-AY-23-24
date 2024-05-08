@@ -1,14 +1,11 @@
-### ++# PCA-EXP-2-Matrix-Summation-using-2D-Grids-and-2D-Blocks-AY-23-24
+###PCA-EXP-2-Matrix-Summation-using-2D-Grids-and-2D-Blocks-AY-23-24
 
-## NAME: kabilan T
-## REG.NO: 212222230059
+## NAME: YUVARAJ B
+## REG.NO: 212222040186
 ## EX. NO: 02
+<h3>DATE</h3>
 
 <h3>AIM:</h3>
-<h3>ENTER YOUR NAME</h3>
-<h3>ENTER YOUR REGISTER NO</h3>
-<h3>EX. NO</h3>
-<h3>DATE</h3>
 <h1> <align=center> MATRIX SUMMATION WITH A 2D GRID AND 2D BLOCKS </h3>
 i.  Use the file sumMatrixOnGPU-2D-grid-2D-block.cu
 ii. Matrix summation with a 2D grid and 2D blocks. Adapt it to integer matrix addition. Find the best execution configuration. </h3>
@@ -264,7 +261,8 @@ return (0);
 ~~~
 
 ## OUTPUT:
-<img width="868" alt="Screenshot 2024-03-14 205617" src="https://github.com/kabilanthiyagarajan/PCA-EXP-2-MATRIX-SUMMATION-USING-2D-GRIDS-AND-2D-BLOCKS-AY-23-24/assets/120206067/7b49d783-66d8-43a1-9258-fbc4fcc2c3b8">
+<img width="868" alt="234" src="https://github.com/yuvarajmonarch/PCA-EXP-2-MATRIX-SUMMATION-USING-2D-GRIDS-AND-2D-BLOCKS-AY-23-24/assets/122221735/31056863-0be4-4d54-a785-1fdc8654241d">
+
 
 
 ## RESULT:
